@@ -26,7 +26,7 @@ export default function App() {
   return (
     <ToastProvider>
       <CartProvider>
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
           <ScrollToTop />
           <ScrollProgressBar />
           <div className="flex flex-col min-h-screen bg-ivory text-ink">
