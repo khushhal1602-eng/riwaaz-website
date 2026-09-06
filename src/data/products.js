@@ -44,10 +44,10 @@ export const PRODUCTS = [
     price: 1499,
     currency: "INR",
     images: [
-      "/images/DSC4612.jpg",
-      "/images/DSC4621_1.jpg"
+      "/images/cycle-denim-wide.jpg",
+      "/images/cycle-denim-closeup.jpg"
     ],
-    thumbnail: "/images/DSC4612.jpg",
+    thumbnail: "/images/cycle-denim-wide.jpg",
     alt: "Denim-toned handcrafted jutti with colourful cycle and floral basket embroidery",
     description: "Traditional Indian craftsmanship with a playful, contemporary character — a rich denim-toned base brought to life with colourful handmade embroidery and a charming cycle-and-floral-basket motif. Completely handmade from 100% genuine leather, made to be worn well beyond occasion wear: with denim, dresses, kurtas, suits or everyday outfits.",
     highlights: [
