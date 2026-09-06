@@ -4,6 +4,7 @@ export const INSTAGRAM_URL = "https://www.instagram.com/riwaazbyjiya?stkn=MTJ1d2
 export const INSTAGRAM_HANDLE = "@riwaazbyjiya";
 export const OFFICIAL_EMAIL = "sachdevajiya2005@gmail.com";
 export const CAPSULE_VIDEO_SRC = "/videos/capsule-video.mp4";
+export const INSTAGRAM_VIDEO_SRC = "/videos/C0866.mp4";
 
 export function formatINR(amount) {
   return `₹${amount.toLocaleString('en-IN')}`;
