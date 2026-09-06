@@ -84,18 +84,18 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Center: Regal Riwaaz Logo (Golden with Golden Highlights, Maroon Around It & Suiting Gradient) */}
+        {/* Center: Regal Riwaaz Logo (Perfect centered proportion) */}
         <Link
           to="/"
-          className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center justify-center group focus:outline-none py-1"
+          className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center justify-center group focus:outline-none"
           aria-label="Riwaaz - Home"
         >
-          {/* Subtle Ambient Suiting Dual-Tone Glow (Harmonizing Gold and Maroon) */}
+          {/* Subtle Ambient Suiting Dual-Tone Glow */}
           <div
-            className={`absolute -inset-2.5 sm:-inset-3.5 rounded-full blur-xl pointer-events-none transition-all duration-500 ${
+            className={`absolute -inset-1.5 sm:-inset-2 rounded-full blur-md pointer-events-none transition-all duration-500 ${
               isDarkHeader
-                ? 'bg-gradient-to-r from-gold/25 via-gold/45 to-gold/25 opacity-80 group-hover:opacity-100 group-hover:scale-110'
-                : 'bg-gradient-to-r from-maroon/15 via-gold/25 to-maroon/15 opacity-70 group-hover:opacity-95 group-hover:scale-110'
+                ? 'bg-gradient-to-r from-gold/20 via-gold/40 to-gold/20 opacity-70 group-hover:opacity-95'
+                : 'bg-gradient-to-r from-maroon/10 via-gold/20 to-maroon/10 opacity-60 group-hover:opacity-90'
             }`}
             aria-hidden="true"
           />
@@ -103,10 +103,10 @@ export default function Header() {
           <img
             src="/images/riwaaz-logo-gold-maroon.png"
             alt="RIWAAZ by Jiya"
-            className={`w-auto object-contain transition-all duration-400 ease-out group-hover:scale-105 ${
+            className={`w-auto object-contain transition-all duration-300 ease-out group-hover:scale-105 max-w-[120px] sm:max-w-[150px] md:max-w-[180px] ${
               isDarkHeader
-                ? 'h-16 sm:h-18 md:h-20 lg:h-24 drop-shadow-[0_4px_20px_rgba(235,195,100,0.55)] brightness-110 group-hover:brightness-125'
-                : 'h-13 sm:h-15 md:h-16 lg:h-18 drop-shadow-[0_2px_10px_rgba(74,14,20,0.35)] drop-shadow-[0_0_12px_rgba(235,195,100,0.25)] group-hover:drop-shadow-[0_4px_16px_rgba(74,14,20,0.5)]'
+                ? 'h-[40px] sm:h-[46px] md:h-[52px] lg:h-[56px] drop-shadow-[0_2px_12px_rgba(235,195,100,0.5)] brightness-110 group-hover:brightness-120'
+                : 'h-[32px] sm:h-[36px] md:h-[42px] lg:h-[46px] drop-shadow-[0_1.5px_6px_rgba(74,14,20,0.3)] drop-shadow-[0_0_8px_rgba(235,195,100,0.2)] group-hover:drop-shadow-[0_2px_10px_rgba(74,14,20,0.45)]'
             }`}
           />
         </Link>
