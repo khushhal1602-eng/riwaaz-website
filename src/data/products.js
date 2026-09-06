@@ -74,10 +74,10 @@ export const PRODUCTS = [
     price: 1399,
     currency: "INR",
     images: [
-      "/images/DSC4628.jpg",
-      "/images/DSC4627_1.jpg"
+      "/images/cycle-jute-box-lifestyle.jpg",
+      "/images/DSC4628.jpg"
     ],
-    thumbnail: "/images/DSC4628.jpg",
+    thumbnail: "/images/cycle-jute-box-lifestyle.jpg",
     alt: "Natural jute-toned handcrafted jutti with cycle and floral basket embroidery",
     description: "An earthy, versatile interpretation of the cycle-and-floral-basket design: a natural jute-toned base as a subtle canvas for colourful handmade embroidery and the distinctive artwork. Completely handmade from 100% genuine leather, suited to everyday versatility as well as traditional occasions.",
     highlights: [
@@ -100,10 +100,10 @@ export const PRODUCTS = [
     price: 1399,
     currency: "INR",
     images: [
-      "/images/DSC4627.jpg",
-      "/images/DSC4625.jpg"
+      "/images/teapot-jute-box-lifestyle.jpg",
+      "/images/DSC4627.jpg"
     ],
-    thumbnail: "/images/DSC4627.jpg",
+    thumbnail: "/images/teapot-jute-box-lifestyle.jpg",
     alt: "Natural jute-toned handcrafted jutti with floral teapot handmade embroidery",
     description: "A warm, earthy take on the teapot-floral design: a natural jute-toned base with colourful handmade embroidery and a charming floral teapot motif. Completely handmade from 100% genuine leather, bringing traditional character into an effortlessly versatile design.",
     highlights: [
