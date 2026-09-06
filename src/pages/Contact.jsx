@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Reveal from '../components/Reveal';
-import { MessageCircle, Mail, ArrowUpRight, ShieldCheck, Send } from 'lucide-react';
+import { MessageCircle, Mail, ArrowUpRight, ShieldCheck, Send, Ruler } from 'lucide-react';
 import { InstagramIcon } from '../components/Icons';
 import { WHATSAPP_DISPLAY, createWhatsAppLink, INSTAGRAM_URL, INSTAGRAM_HANDLE, OFFICIAL_EMAIL } from '../data/products';
+import SizeChartModal from '../components/SizeChartModal';
 
 export default function Contact() {
+  const [showSizeModal, setShowSizeModal] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     topic: 'Size & Fit Inquiry',
@@ -209,9 +211,25 @@ export default function Contact() {
             <p className="text-sm leading-relaxed text-muted-foreground font-light">
               Because leather naturally expands and softens around the contours of your feet, our juttis are crafted to fit snug initially. If your pair doesn't fit comfortably, we replace it in the correct size within 7 days.
             </p>
+            <div className="mt-6 pt-5 border-t border-border/80">
+              <button
+                type="button"
+                onClick={() => setShowSizeModal(true)}
+                className="eyebrow bg-maroon text-ivory px-5 py-3 text-xs inline-flex items-center gap-2 hover:bg-burgundy transition-colors shadow-xs"
+              >
+                <Ruler size={14} />
+                <span>View Full Size Chart & Guide</span>
+              </button>
+            </div>
           </div>
         </Reveal>
       </div>
+
+      {/* Sizing Chart Modal */}
+      <SizeChartModal
+        isOpen={showSizeModal}
+        onClose={() => setShowSizeModal(false)}
+      />
     </section>
   );
 }

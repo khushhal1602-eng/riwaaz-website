@@ -15,13 +15,16 @@ import {
   MapPin,
   Building,
   CheckCircle2,
+  Ruler,
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { formatINR } from '../data/products';
+import SizeChartModal from './SizeChartModal';
 
 const CUSTOMER_STORAGE_KEY = 'riwaaz_customer_details';
 
 export default function CartDrawer() {
+  const [showSizeChart, setShowSizeChart] = useState(false);
   const {
     items,
     isDrawerOpen,
@@ -340,9 +343,19 @@ export default function CartDrawer() {
               <div className="border-t border-border bg-secondary/30 px-6 py-5 space-y-4">
                 <div className="flex items-start gap-2.5 bg-ivory/80 border border-border/80 p-3 text-xs text-muted-foreground rounded">
                   <ShieldCheck size={18} className="text-gold shrink-0 mt-0.5" />
-                  <p>
-                    <strong>Guaranteed Perfect Fit:</strong> If your jutti doesn't fit, we'll replace it in the correct size within 7 days free of hassle.
-                  </p>
+                  <div className="flex-1">
+                    <p>
+                      <strong>Guaranteed Perfect Fit:</strong> If your jutti doesn't fit, we'll replace it in the correct size within 7 days free of hassle.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => setShowSizeChart(true)}
+                      className="mt-1.5 inline-flex items-center gap-1 text-maroon hover:text-gold underline underline-offset-2 uppercase tracking-wider text-[0.65rem] font-medium transition-colors"
+                    >
+                      <Ruler size={11} />
+                      <span>Check Size Chart & Guide</span>
+                    </button>
+                  </div>
                 </div>
 
                 <div className="flex justify-between items-center pt-1">
@@ -661,6 +674,12 @@ export default function CartDrawer() {
           </div>
         )}
       </div>
+
+      {/* Sizing Chart Modal accessible directly from Cart */}
+      <SizeChartModal
+        isOpen={showSizeChart}
+        onClose={() => setShowSizeChart(false)}
+      />
     </div>
   );
 }

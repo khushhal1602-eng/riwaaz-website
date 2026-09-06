@@ -6,7 +6,9 @@ import { useToast } from '../context/ToastContext';
 import ProductCard from '../components/ProductCard';
 import Reveal from '../components/Reveal';
 import { InstagramIcon } from '../components/Icons';
-import { ShieldCheck, MessageCircle, ArrowLeft, Check, Sparkles } from 'lucide-react';
+import { ShieldCheck, MessageCircle, ArrowLeft, Check, Sparkles, Ruler } from 'lucide-react';
+import SizeChartModal from '../components/SizeChartModal';
+import { SIZE_CHART, MEASURING_STEPS } from '../data/products';
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -15,6 +17,8 @@ export default function ProductDetail() {
 
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const [showSizeModal, setShowSizeModal] = useState(false);
+  const [isSizeGuideOpen, setIsSizeGuideOpen] = useState(false);
 
   const { addItem, openDrawer } = useCart();
   const { addToast } = useToast();
@@ -144,9 +148,19 @@ export default function ProductDetail() {
               {/* Size Selection */}
               <div className="mt-10">
                 <fieldset>
-                  <legend className="eyebrow text-muted-foreground mb-4">
-                    Select size (UK / IND)
-                  </legend>
+                  <div className="flex items-center justify-between mb-4">
+                    <legend className="eyebrow text-muted-foreground">
+                      Select size (UK / IND)
+                    </legend>
+                    <button
+                      type="button"
+                      onClick={() => setShowSizeModal(true)}
+                      className="inline-flex items-center gap-1.5 text-xs text-maroon hover:text-gold transition-colors font-medium group cursor-pointer"
+                    >
+                      <Ruler size={13} className="text-gold group-hover:scale-110 transition-transform" />
+                      <span className="underline underline-offset-4 tracking-wider uppercase text-[0.68rem]">Size Chart & Guide</span>
+                    </button>
+                  </div>
                   <div className="flex flex-wrap gap-3">
                     {product.sizes.map((size) => {
                       const isAvailable = product.availability[size] !== false;
@@ -174,6 +188,75 @@ export default function ProductDetail() {
                 <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
                   <ShieldCheck size={16} className="text-gold shrink-0" />
                   <span>If your jutti doesn't fit, we'll replace it in the correct size within 7 days.</span>
+                </div>
+
+                {/* Embedded Luxury Size & Fit Guide Accordion */}
+                <div className="mt-6 border border-border/80 bg-secondary/30 rounded-sm overflow-hidden transition-all duration-300">
+                  <button
+                    type="button"
+                    onClick={() => setIsSizeGuideOpen(!isSizeGuideOpen)}
+                    className="w-full flex items-center justify-between p-3.5 sm:p-4 text-left hover:bg-secondary/50 transition-colors"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <Ruler size={15} className="text-gold" />
+                      <span className="eyebrow text-xs text-maroon font-medium">Jutti Size Chart & Foot Length</span>
+                    </div>
+                    <span className="font-mono text-gold text-base font-semibold">{isSizeGuideOpen ? '−' : '+'}</span>
+                  </button>
+
+                  {isSizeGuideOpen && (
+                    <div className="px-4 pb-5 pt-1 border-t border-border/60 bg-ivory/60 space-y-4">
+                      {/* Sizing Table */}
+                      <div className="overflow-hidden border border-border rounded-sm bg-white shadow-xs">
+                        <table className="w-full text-center text-xs">
+                          <thead>
+                            <tr className="bg-maroon text-ivory">
+                              <th className="py-2 px-3 uppercase tracking-wider font-medium border-r border-burgundy/50">Size (UK/IND)</th>
+                              <th className="py-2 px-3 uppercase tracking-wider font-medium">Foot Length</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-border text-ink font-sans">
+                            {SIZE_CHART.map(({ size, length }) => (
+                              <tr
+                                key={size}
+                                onClick={() => setSelectedSize(size)}
+                                className={`cursor-pointer transition-colors ${
+                                  selectedSize === size ? 'bg-gold/20 font-semibold text-maroon' : 'hover:bg-gold/10'
+                                }`}
+                              >
+                                <td className="py-2.5 px-3 border-r border-border font-display text-base">{size}</td>
+                                <td className="py-2.5 px-3 font-mono">{length}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+
+                      {/* Measuring Steps */}
+                      <div className="space-y-2 pt-1">
+                        <p className="eyebrow text-[0.65rem] text-muted-foreground">How to Measure Your Foot</p>
+                        <ol className="space-y-1.5 text-xs text-muted-foreground font-light">
+                          {MEASURING_STEPS.map(({ step, text }) => (
+                            <li key={step} className="flex items-start gap-2">
+                              <span className="w-4 h-4 rounded-full bg-maroon text-ivory text-[10px] font-mono flex items-center justify-center shrink-0 mt-0.5">
+                                {step}
+                              </span>
+                              <span>{text}</span>
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+
+                      {/* View full chart trigger */}
+                      <button
+                        type="button"
+                        onClick={() => setShowSizeModal(true)}
+                        className="w-full text-center py-2.5 border border-dashed border-gold/60 text-maroon hover:border-gold hover:bg-gold/10 text-[0.68rem] tracking-widest uppercase transition-colors rounded-xs"
+                      >
+                        ✦ Click to view full illustrated chart & guide ✦
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -232,6 +315,19 @@ export default function ProductDetail() {
                 <dt className="eyebrow text-muted-foreground">Care</dt>
                 <dd className="mt-1 font-light text-muted-foreground">{product.careInstructions}</dd>
               </div>
+              <div>
+                <dt className="eyebrow text-muted-foreground">Sizing Guide</dt>
+                <dd className="mt-1 font-light text-ink flex items-center justify-between">
+                  <span>Sizes 36–39 (23 cm – 27 cm foot length)</span>
+                  <button
+                    type="button"
+                    onClick={() => setShowSizeModal(true)}
+                    className="text-xs text-maroon hover:text-gold underline underline-offset-2 uppercase tracking-wider text-[0.68rem] cursor-pointer font-medium"
+                  >
+                    View Size Chart
+                  </button>
+                </dd>
+              </div>
             </dl>
           </div>
         </div>
@@ -269,6 +365,14 @@ export default function ProductDetail() {
           <span>WhatsApp</span>
         </a>
       </div>
+
+      {/* Luxury Interactive Size Chart Modal */}
+      <SizeChartModal
+        isOpen={showSizeModal}
+        onClose={() => setShowSizeModal(false)}
+        selectedSize={selectedSize}
+        onSelectSize={setSelectedSize}
+      />
     </>
   );
 }

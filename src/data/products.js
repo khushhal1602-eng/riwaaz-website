@@ -14,6 +14,28 @@ export function createWhatsAppLink(message) {
   return `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(message)}`;
 }
 
+export const SIZE_CHART = [
+  { size: 36, length: "23 – 24 cm" },
+  { size: 37, length: "25 cm" },
+  { size: 38, length: "26 cm" },
+  { size: 39, length: "27 cm" },
+];
+
+export const MEASURING_STEPS = [
+  {
+    step: 1,
+    text: "Place your foot on a flat surface with your heel against a wall.",
+  },
+  {
+    step: 2,
+    text: "Measure from the back of your heel to the tip of your longest toe.",
+  },
+  {
+    step: 3,
+    text: "Choose the size that matches your foot length (or the closest size).",
+  },
+];
+
 export const PRODUCTS = [
   {
     id: "riwaaz-cycle-denim",
