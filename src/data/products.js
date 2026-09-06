@@ -96,10 +96,10 @@ export const PRODUCTS = [
     price: 1399,
     currency: "INR",
     images: [
-      "/images/DSC4628.jpg",
-      "/images/cycle-jute-box-lifestyle.jpg"
+      "/images/cycle-jute-wide.jpg",
+      "/images/cycle-jute-closeup.jpg"
     ],
-    thumbnail: "/images/DSC4628.jpg",
+    thumbnail: "/images/cycle-jute-wide.jpg",
     alt: "Natural jute-toned handcrafted jutti with cycle and floral basket embroidery",
     description: "An earthy, versatile interpretation of the cycle-and-floral-basket design: a natural jute-toned base as a subtle canvas for colourful handmade embroidery and the distinctive artwork. Completely handmade from 100% genuine leather, suited to everyday versatility as well as traditional occasions.",
     highlights: [
