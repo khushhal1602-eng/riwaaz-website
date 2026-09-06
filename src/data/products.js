@@ -122,10 +122,10 @@ export const PRODUCTS = [
     price: 1399,
     currency: "INR",
     images: [
-      "/images/teapot-jute-box-lifestyle.jpg",
-      "/images/DSC4627.jpg"
+      "/images/teapot-jute-wide.jpg",
+      "/images/teapot-jute-closeup.jpg"
     ],
-    thumbnail: "/images/teapot-jute-box-lifestyle.jpg",
+    thumbnail: "/images/teapot-jute-wide.jpg",
     alt: "Natural jute-toned handcrafted jutti with floral teapot handmade embroidery",
     description: "A warm, earthy take on the teapot-floral design: a natural jute-toned base with colourful handmade embroidery and a charming floral teapot motif. Completely handmade from 100% genuine leather, bringing traditional character into an effortlessly versatile design.",
     highlights: [
