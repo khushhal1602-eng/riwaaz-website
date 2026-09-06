@@ -72,13 +72,13 @@ export default function ProductDetail() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Product Image Gallery */}
           <div className="lg:col-span-7">
-            <div className="aspect-4/5 overflow-hidden bg-secondary border border-border/60 shadow-lg relative group">
+            <div className="aspect-4/3 overflow-hidden bg-[#FAF6F0] border border-border/70 shadow-lg relative group flex items-center justify-center">
               <img
                 src={product.images[selectedImageIndex] || product.images[0]}
                 alt={product.alt}
-                className="h-full w-full object-cover transition-all duration-500"
+                className="h-full w-full object-contain p-3 sm:p-4 transition-all duration-500"
               />
-              <div className="absolute top-4 left-4 bg-ivory/90 backdrop-blur-sm px-3 py-1.5 text-[0.65rem] tracking-widest uppercase text-maroon font-sans border border-border/60 shadow-sm">
+              <div className="absolute top-4 left-4 bg-ivory/90 backdrop-blur-sm px-3 py-1.5 text-[0.65rem] tracking-widest uppercase text-maroon font-sans border border-border/60 shadow-sm z-10">
                 100% Genuine Leather
               </div>
             </div>
@@ -92,7 +92,7 @@ export default function ProductDetail() {
                     type="button"
                     onClick={() => setSelectedImageIndex(idx)}
                     aria-label={`View angle ${idx + 1}`}
-                    className={`h-24 w-20 shrink-0 overflow-hidden border-2 transition-all duration-200 bg-secondary ${
+                    className={`h-24 w-28 shrink-0 overflow-hidden border-2 transition-all duration-200 bg-[#FAF6F0] flex items-center justify-center ${
                       selectedImageIndex === idx
                         ? 'border-gold shadow-md'
                         : 'border-border/60 opacity-70 hover:opacity-100 hover:border-border'
@@ -101,7 +101,7 @@ export default function ProductDetail() {
                     <img
                       src={img}
                       alt={`${product.name} — angle ${idx + 1}`}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-contain p-1"
                     />
                   </button>
                 ))}

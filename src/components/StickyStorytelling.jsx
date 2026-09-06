@@ -96,20 +96,20 @@ export default function StickyStorytelling() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* LEFT / STICKY VISUAL CONTAINER */}
         <div className="lg:col-span-6 lg:sticky lg:top-28 z-20">
-          <div className="relative aspect-4/5 overflow-hidden bg-secondary border border-border/70 shadow-2xl rounded-sm">
+          <div className="relative aspect-4/3 overflow-hidden bg-[#FAF6F0] border border-border/80 shadow-2xl rounded-sm">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
-                initial={{ opacity: 0, scale: 1.05 }}
+                initial={{ opacity: 0, scale: 1.03 }}
                 animate={{ opacity: 1, scale: 1.0 }}
                 exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 h-full w-full"
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 h-full w-full flex items-center justify-center"
               >
                 <img
                   src={current.image}
                   alt={current.alt}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-contain p-2 sm:p-3.5"
                 />
               </motion.div>
             </AnimatePresence>

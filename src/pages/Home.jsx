@@ -153,7 +153,8 @@ export default function Home() {
               <ImageReveal
                 src={PRODUCTS[0].images[1]}
                 alt="Close view of hand embroidery on a denim-toned Riwaaz jutti"
-                aspectRatio="aspect-4/5"
+                aspectRatio="aspect-4/3"
+                objectFit="object-contain"
                 className="border border-border/70 shadow-2xl"
                 badge="100% Genuine Leather"
               />

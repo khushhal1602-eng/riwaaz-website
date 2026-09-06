@@ -251,17 +251,17 @@ export default function HorizontalCapsuleScroll() {
                 className="w-[85vw] max-w-[340px] md:max-w-[400px] shrink-0 snap-start bg-[#25201f] border border-border/60 hover:border-gold/70 p-5 md:p-6 rounded-sm shadow-xl flex flex-col justify-between group/card transition-all duration-300"
               >
                 <div>
-                  <div className="relative aspect-4/5 overflow-hidden bg-black rounded-xs mb-6 border border-white/10 group/img">
+                  <div className="relative aspect-4/3 overflow-hidden bg-[#1a1514] rounded-xs mb-6 border border-white/10 group/img flex items-center justify-center">
                     <img
                       src={product.images[0]}
                       alt={product.alt}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover/card:scale-105"
+                      className="h-full w-full object-contain p-2.5 transition-transform duration-700 group-hover/card:scale-105"
                     />
-                    <div className="absolute top-3 left-3 bg-ivory/95 backdrop-blur-md px-3 py-1 text-[0.6rem] tracking-widest uppercase text-maroon font-sans border border-border/70 shadow-sm">
+                    <div className="absolute top-3 left-3 bg-ivory/95 backdrop-blur-md px-3 py-1 text-[0.6rem] tracking-widest uppercase text-maroon font-sans border border-border/70 shadow-sm z-10">
                       Edition {editionNumber}
                     </div>
-                    <div className="absolute bottom-3 right-3 bg-ink/80 backdrop-blur-sm px-2.5 py-1 text-[0.65rem] font-mono text-gold border border-gold/30">
+                    <div className="absolute bottom-3 right-3 bg-ink/80 backdrop-blur-sm px-2.5 py-1 text-[0.65rem] font-mono text-gold border border-gold/30 z-10">
                       {formatINR(product.price)}
                     </div>
                   </div>

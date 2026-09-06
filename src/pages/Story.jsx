@@ -85,7 +85,8 @@ export default function Story() {
             <ImageReveal
               src="/images/jutti-jute-box-lifestyle.png"
               alt="Denim-toned Riwaaz juttis resting beside the maroon and gold Riwaaz box"
-              aspectRatio="aspect-4/5"
+              aspectRatio="aspect-4/3"
+              objectFit="object-contain"
               className="border border-gold/30 shadow-2xl"
               badge="Generational Art"
             />

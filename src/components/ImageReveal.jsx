@@ -5,7 +5,8 @@ export default function ImageReveal({
   src,
   alt,
   className = '',
-  aspectRatio = 'aspect-4/5',
+  aspectRatio = 'aspect-4/3',
+  objectFit = 'object-contain',
   priority = false,
   badge = null,
 }) {
@@ -26,8 +27,8 @@ export default function ImageReveal({
 
   // Scroll-linked transforms:
   // As element enters: scale gradually settles from 1.08 to 1.00, Y moves from 35px to -25px
-  const scale = useTransform(smoothProgress, [0, 0.5, 1], [1.08, 1.02, 0.98]);
-  const y = useTransform(smoothProgress, [0, 1], ['35px', '-25px']);
+  const scale = useTransform(smoothProgress, [0, 0.5, 1], [1.05, 1.01, 0.99]);
+  const y = useTransform(smoothProgress, [0, 1], ['25px', '-15px']);
   const opacity = useTransform(smoothProgress, [0, 0.25], [0.65, 1]);
 
   // Dynamic clip-path uncover linked directly to entrance scroll progress
@@ -35,12 +36,12 @@ export default function ImageReveal({
 
   if (shouldReduceMotion) {
     return (
-      <div className={`relative overflow-hidden ${aspectRatio} bg-secondary ${className}`}>
+      <div className={`relative overflow-hidden ${aspectRatio} bg-[#FAF6F0] ${className}`}>
         <img
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
-          className="h-full w-full object-cover"
+          className={`h-full w-full ${objectFit} p-2`}
         />
         {badge && (
           <div className="absolute top-4 left-4 bg-ivory/90 backdrop-blur-sm px-3 py-1.5 text-[0.62rem] tracking-widest uppercase text-maroon font-sans border border-border/60 shadow-sm z-10">
@@ -54,20 +55,20 @@ export default function ImageReveal({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden ${aspectRatio} bg-secondary ${className}`}
+      className={`relative overflow-hidden ${aspectRatio} bg-[#FAF6F0] ${className}`}
     >
       <motion.div
         style={{
           clipPath: useTransform(clipInset, (v) => `inset(${v} 0 0 0)`),
         }}
-        className="h-full w-full will-change-transform"
+        className="h-full w-full will-change-transform flex items-center justify-center"
       >
         <motion.img
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
           style={{ y, scale, opacity }}
-          className="h-full w-full object-cover origin-center will-change-transform"
+          className={`h-full w-full ${objectFit} p-2 origin-center will-change-transform`}
         />
       </motion.div>
 
