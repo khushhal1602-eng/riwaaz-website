@@ -70,10 +70,10 @@ export const PRODUCTS = [
     price: 1499,
     currency: "INR",
     images: [
-      "/images/DSC4621.jpg",
-      "/images/DSC4609.jpg"
+      "/images/teapot-denim-wide.jpg",
+      "/images/teapot-denim-closeup.jpg"
     ],
-    thumbnail: "/images/DSC4621.jpg",
+    thumbnail: "/images/teapot-denim-wide.jpg",
     alt: "Denim-toned handcrafted jutti with teapot and floral handmade embroidery",
     description: "A contemporary expression of traditional jutti craftsmanship: a rich denim-toned base with colourful handmade embroidery and a charming teapot-floral motif. Completely handmade from 100% genuine leather, designed to move effortlessly between everyday styling and special occasions.",
     highlights: [
