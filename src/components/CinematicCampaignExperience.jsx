@@ -39,7 +39,7 @@ const CAMPAIGN_CHAPTERS = [
     heading: 'Crafted by Hand.',
     subheading: 'The playful warmth of chai culture — delicate floral tea-cups stitched thread by thread over deep denim.',
     primaryImage: '/images/jutti-teapot-denim-portrait.jpg',
-    secondaryImage: '/images/DSC4625.jpg',
+    secondaryImage: '/images/DSC4621_1.jpg',
     alt: 'Denim jutti with teapot and blooming floral embroidery',
     productName: 'Teapot Floral Design — Denim Edition',
     price: 1499,
@@ -250,21 +250,33 @@ export default function CinematicCampaignExperience() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 h-full w-full"
+                  className="absolute inset-0 h-full w-full flex items-center justify-center bg-[#171312]"
                 >
+                  {/* Subtle Ambient Blurred Backdrop to smoothly fill wide screens without empty gaps */}
+                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                    <img
+                      src={current.primaryImage}
+                      alt=""
+                      className="h-full w-full object-cover blur-2xl opacity-30 scale-125"
+                      aria-hidden="true"
+                    />
+                    <div className="absolute inset-0 bg-ink/50" />
+                  </div>
+
+                  {/* Foreground 100% Complete Uncropped Photo */}
                   <motion.img
                     src={current.primaryImage}
                     alt={current.alt}
-                    initial={{ scale: 1.0 }}
-                    animate={{ scale: 1.04 }}
+                    initial={{ scale: 0.98 }}
+                    animate={{ scale: 1.0 }}
                     transition={{
                       duration: CHAPTER_DURATION / 1000 + 0.5,
                       ease: 'linear',
                     }}
-                    className="h-full w-full object-cover object-center will-change-transform"
+                    className="relative z-10 h-full w-full object-contain p-3 sm:p-5 drop-shadow-[0_12px_28px_rgba(0,0,0,0.7)] will-change-transform"
                   />
                   {/* Gentle Gradient Shadow to anchor details */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none z-10" />
                 </motion.div>
               </AnimatePresence>
 
@@ -278,12 +290,12 @@ export default function CinematicCampaignExperience() {
 
               {/* Floating Miniature Secondary Detail Vignette (Desktop only) */}
               {current.secondaryImage && (
-                <div className="hidden sm:block absolute bottom-5 right-5 z-20 max-w-[140px] md:max-w-[170px] overflow-hidden border border-gold/50 shadow-2xl bg-ink/90 p-1 rounded-xs backdrop-blur-md">
-                  <div className="aspect-square overflow-hidden bg-black/40">
+                <div className="hidden sm:block absolute bottom-5 right-5 z-20 max-w-[140px] md:max-w-[170px] overflow-hidden border border-gold/50 shadow-2xl bg-ink/90 p-1.5 rounded-xs backdrop-blur-md">
+                  <div className="aspect-square overflow-hidden bg-black/60 flex items-center justify-center">
                     <img
                       src={current.secondaryImage}
                       alt={`${current.heading} artisan detail`}
-                      className="h-full w-full object-cover brightness-95"
+                      className="h-full w-full object-contain p-1 brightness-95"
                     />
                   </div>
                   <p className="mt-1 text-[0.58rem] tracking-wider text-gold/90 text-center font-mono uppercase truncate px-1">
