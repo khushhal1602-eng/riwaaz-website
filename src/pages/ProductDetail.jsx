@@ -76,11 +76,11 @@ export default function ProductDetail() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
           {/* Product Image Gallery */}
           <div className="lg:col-span-7">
-            <div className="aspect-4/3 overflow-hidden bg-[#FAF6F0] border border-border/70 shadow-lg relative group flex items-center justify-center">
+            <div className="aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] max-h-[720px] overflow-hidden bg-[#FAF6F0] border border-border/70 shadow-lg relative group flex items-center justify-center rounded-xs">
               <img
                 src={product.images[selectedImageIndex] || product.images[0]}
                 alt={product.alt}
-                className="h-full w-full object-contain p-3 sm:p-4 transition-all duration-500"
+                className="h-full w-full object-contain p-3 sm:p-5 transition-all duration-500"
               />
               <div className="absolute top-4 left-4 bg-ivory/90 backdrop-blur-sm px-3 py-1.5 text-[0.65rem] tracking-widest uppercase text-maroon font-sans border border-border/60 shadow-sm z-10">
                 100% Genuine Leather
@@ -96,7 +96,7 @@ export default function ProductDetail() {
                     type="button"
                     onClick={() => setSelectedImageIndex(idx)}
                     aria-label={`View angle ${idx + 1}`}
-                    className={`h-24 w-28 shrink-0 overflow-hidden border-2 transition-all duration-200 bg-[#FAF6F0] flex items-center justify-center ${
+                    className={`h-28 w-20 shrink-0 overflow-hidden border-2 transition-all duration-200 bg-[#FAF6F0] flex items-center justify-center rounded-xs ${
                       selectedImageIndex === idx
                         ? 'border-gold shadow-md'
                         : 'border-border/60 opacity-70 hover:opacity-100 hover:border-border'

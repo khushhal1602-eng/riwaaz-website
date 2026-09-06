@@ -24,12 +24,12 @@ export default function ProductCard({ product, index = 0 }) {
         className="group block transition-transform duration-500 ease-out hover:-translate-y-1.5"
         aria-label={`${product.name}, ${formatINR(product.price)} — view details`}
       >
-        <div className="relative aspect-4/3 overflow-hidden bg-[#FAF6F0] border border-border/70 transition-all duration-500 group-hover:border-gold/80 group-hover:shadow-2xl rounded-sm">
+        <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-[#FAF6F0] border border-border/70 transition-all duration-500 group-hover:border-gold/80 group-hover:shadow-2xl rounded-sm flex items-center justify-center">
           <motion.img
             src={product.thumbnail}
             alt={product.alt}
             loading="lazy"
-            className="h-full w-full object-contain p-2 sm:p-3 transition-transform duration-[1000ms] ease-out group-hover:scale-[1.03] will-change-transform"
+            className="h-full w-full object-contain p-3 sm:p-5 transition-transform duration-[1000ms] ease-out group-hover:scale-[1.03] will-change-transform"
           />
           <div className="absolute top-3.5 left-3.5 bg-ivory/95 backdrop-blur-md px-3 py-1 text-[0.62rem] tracking-widest uppercase text-maroon font-sans border border-border/70 shadow-sm z-10">
             100% Handmade Jutti
