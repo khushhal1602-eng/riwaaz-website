@@ -267,7 +267,7 @@ export default function HorizontalCapsuleScroll() {
                   </div>
 
                   <div className="flex items-baseline justify-between mb-2">
-                    <span className="eyebrow text-gold text-[0.65rem]">Handmade Leather</span>
+                    <span className="eyebrow text-gold text-[0.65rem]">100% Handmade Jutti</span>
                     <span className="font-mono text-xs text-ivory/40">Edition {editionNumber}</span>
                   </div>
 

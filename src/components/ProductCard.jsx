@@ -32,7 +32,7 @@ export default function ProductCard({ product, index = 0 }) {
             className="h-full w-full object-cover transition-transform duration-[1000ms] ease-out group-hover:scale-[1.03] will-change-transform"
           />
           <div className="absolute top-3.5 left-3.5 bg-ivory/95 backdrop-blur-md px-3 py-1 text-[0.62rem] tracking-widest uppercase text-maroon font-sans border border-border/70 shadow-sm">
-            Handmade Leather
+            100% Handmade Jutti
           </div>
           <div className="absolute bottom-3.5 right-3.5 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-maroon text-ivory p-2.5 rounded-full shadow-lg group-hover:scale-105">
             <ArrowUpRight size={16} />

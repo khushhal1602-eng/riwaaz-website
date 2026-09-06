@@ -98,7 +98,7 @@ export default function Footer() {
         {/* Bottom Copyright */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ivory/40">
           <p>© {new Date().getFullYear()} RIWAAZ by Jiya. All rights reserved.</p>
-          <p className="tracking-wider uppercase text-[0.65rem]">Handmade Leather Footwear · Punjab, India</p>
+          <p className="tracking-wider uppercase text-[0.65rem]">100% Handmade Jutti · Punjab, India</p>
         </div>
       </div>
     </footer>
