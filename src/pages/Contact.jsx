@@ -203,11 +203,11 @@ export default function Contact() {
             <div className="flex items-start gap-3 text-sm text-ink mb-4">
               <ShieldCheck size={20} className="text-gold shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                Sizes 36, 37, 38 and 39. If your jutti doesn't fit, we'll replace it in the correct size.
+                Sizes 36, 37, 38 and 39. If your jutti doesn't fit, we'll replace it in the correct size within 7 days.
               </p>
             </div>
             <p className="text-sm leading-relaxed text-muted-foreground font-light">
-              Because leather naturally expands and softens around the contours of your feet, our juttis are crafted to fit snug initially. If your pair doesn't fit comfortably, we replace it in the correct size.
+              Because leather naturally expands and softens around the contours of your feet, our juttis are crafted to fit snug initially. If your pair doesn't fit comfortably, we replace it in the correct size within 7 days.
             </p>
           </div>
         </Reveal>

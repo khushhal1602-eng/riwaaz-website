@@ -173,7 +173,7 @@ export default function ProductDetail() {
 
                 <div className="mt-4 flex items-center gap-2 text-xs text-muted-foreground">
                   <ShieldCheck size={16} className="text-gold shrink-0" />
-                  <span>If your jutti doesn't fit, we'll replace it in the correct size.</span>
+                  <span>If your jutti doesn't fit, we'll replace it in the correct size within 7 days.</span>
                 </div>
               </div>
 

@@ -26,7 +26,7 @@ export default function Footer() {
             </p>
             <div className="pt-2 text-xs text-gold/90 flex items-center gap-2">
               <span>✦</span>
-              <span>If your jutti doesn't fit, we'll replace it in the correct size.</span>
+              <span>If your jutti doesn't fit, we'll replace it in the correct size within 7 days.</span>
             </div>
           </div>
 

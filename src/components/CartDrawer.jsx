@@ -341,7 +341,7 @@ export default function CartDrawer() {
                 <div className="flex items-start gap-2.5 bg-ivory/80 border border-border/80 p-3 text-xs text-muted-foreground rounded">
                   <ShieldCheck size={18} className="text-gold shrink-0 mt-0.5" />
                   <p>
-                    <strong>Guaranteed Perfect Fit:</strong> If your jutti doesn't fit, we'll replace it in the correct size free of hassle.
+                    <strong>Guaranteed Perfect Fit:</strong> If your jutti doesn't fit, we'll replace it in the correct size within 7 days free of hassle.
                   </p>
                 </div>
 
