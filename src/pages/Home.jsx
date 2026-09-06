@@ -153,7 +153,7 @@ export default function Home() {
               <ImageReveal
                 src={PRODUCTS[0].images[1]}
                 alt="Close view of hand embroidery on a denim-toned Riwaaz jutti"
-                aspectRatio="aspect-4/3"
+                aspectRatio="aspect-[3/4] sm:aspect-[4/5]"
                 objectFit="object-contain"
                 className="border border-border/70 shadow-2xl"
                 badge="100% Genuine Leather"
@@ -237,20 +237,18 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              { product: PRODUCTS[3], speed: 0.9 },
-              { product: PRODUCTS[1], speed: 1.1 },
-              { product: PRODUCTS[2], speed: 0.95 },
-            ].map(({ product, speed }, idx) => (
-              <ScrollParallax key={`versatile-${product.id}`} speed={speed} offset={40}>
-                <ImageReveal
-                  src={product.images[1] || product.images[0]}
-                  alt={product.alt}
-                  aspectRatio="aspect-4/5"
-                  className="border border-gold/25 shadow-2xl"
-                  badge={product.name}
-                />
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {PRODUCTS.map((product, idx) => (
+              <ScrollParallax key={`versatile-${product.id}`} speed={0.95 + (idx % 2) * 0.1} offset={35}>
+                <Link to={`/collection/${product.slug}`} className="block group">
+                  <ImageReveal
+                    src={product.thumbnail}
+                    alt={product.alt}
+                    aspectRatio="aspect-[3/4] sm:aspect-[4/5]"
+                    className="border border-gold/25 shadow-2xl transition-all duration-300 group-hover:border-gold group-hover:shadow-[0_15px_35px_rgba(0,0,0,0.5)]"
+                    badge={product.name}
+                  />
+                </Link>
               </ScrollParallax>
             ))}
           </div>

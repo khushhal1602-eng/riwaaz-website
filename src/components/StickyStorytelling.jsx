@@ -13,7 +13,7 @@ const STORY_STEPS = [
     description:
       'We never use synthetic substitutes or Rexine. Real premium leather allows the jutti to breathe naturally, softening and contouring to the exact shape of your foot with every step you take.',
     highlight: 'Pure Leather Construction throughout',
-    image: '/images/jutti-jute-box-lifestyle.png',
+    image: '/images/cycle-jute-wide.jpg',
     alt: 'Riwaaz handcrafted juttis resting beside the maroon embossed box on fur',
     badge: '100% Genuine Leather',
   },
@@ -26,7 +26,7 @@ const STORY_STEPS = [
     description:
       'Each jutti is hand-cut, shaped around wooden lasts, and stitched by master craftsmen in Punjab carrying forward generations of footwear heritage without industrial shortcuts.',
     highlight: 'Over 18 hours of dedicated artisan labor',
-    image: '/images/DSC4628.jpg',
+    image: '/images/cycle-jute-closeup.jpg',
     alt: 'Natural jute handcrafted jutti with cycle embroidery',
     badge: 'Artisanal Lasting',
   },
@@ -39,7 +39,7 @@ const STORY_STEPS = [
     description:
       'Our whimsical motifs — from the iconic bicycle carrying blooming florals to the heritage teapot — are hand-embroidered with vibrant silk floss threads. Subtle nuances mark each pair as a unique piece of wearable art.',
     highlight: 'Original motif illustrations & threadwork',
-    image: '/images/jutti-embroidery-detail.png',
+    image: '/images/cycle-denim-closeup.jpg',
     alt: 'Detailed close up of handcrafted cycle and flower basket embroidery',
     badge: 'Hand Embroidery',
   },
@@ -52,7 +52,7 @@ const STORY_STEPS = [
     description:
       'Designed to transition effortlessly from morning markets and casual denim to festive occasions, destination weddings, and quiet Tuesdays. A piece made for the way we actually live and dress today.',
     highlight: 'No break-in pain with soft leather lining',
-    image: '/images/DSC4621_1.jpg',
+    image: '/images/teapot-denim-wide.jpg',
     alt: 'Editorial denim-toned jutti pair with handmade box presentation',
     badge: 'Everyday Luxury',
   },
@@ -96,7 +96,7 @@ export default function StickyStorytelling() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         {/* LEFT / STICKY VISUAL CONTAINER */}
         <div className="lg:col-span-6 lg:sticky lg:top-28 z-20">
-          <div className="relative aspect-4/3 overflow-hidden bg-[#FAF6F0] border border-border/80 shadow-2xl rounded-sm">
+          <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-[#FAF6F0] border border-border/80 shadow-2xl rounded-sm">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current.id}
