@@ -84,29 +84,29 @@ export default function Header() {
           </nav>
         </div>
 
-        {/* Center: Regal Riwaaz Logo (Maroon Gradient on Ivory, Gold on Dark Hero) */}
+        {/* Center: Regal Riwaaz Logo (Golden with Golden Highlights, Maroon Around It & Suiting Gradient) */}
         <Link
           to="/"
-          className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center justify-center group focus:outline-none"
+          className="absolute left-1/2 -translate-x-1/2 z-20 flex items-center justify-center group focus:outline-none py-1"
           aria-label="Riwaaz - Home"
         >
-          {/* Subtle Ambient Radial Glow */}
+          {/* Subtle Ambient Suiting Dual-Tone Glow (Harmonizing Gold and Maroon) */}
           <div
-            className={`absolute -inset-3 sm:-inset-4 rounded-full blur-xl pointer-events-none transition-opacity duration-500 ${
+            className={`absolute -inset-2.5 sm:-inset-3.5 rounded-full blur-xl pointer-events-none transition-all duration-500 ${
               isDarkHeader
-                ? 'bg-gold/30 opacity-70 group-hover:opacity-100'
-                : 'bg-maroon/10 opacity-60 group-hover:opacity-90'
+                ? 'bg-gradient-to-r from-gold/25 via-gold/45 to-gold/25 opacity-80 group-hover:opacity-100 group-hover:scale-110'
+                : 'bg-gradient-to-r from-maroon/15 via-gold/25 to-maroon/15 opacity-70 group-hover:opacity-95 group-hover:scale-110'
             }`}
             aria-hidden="true"
           />
 
           <img
-            src={isDarkHeader ? '/images/riwaaz-logo.png' : '/images/riwaaz-logo-maroon.png'}
+            src="/images/riwaaz-logo-gold-maroon.png"
             alt="RIWAAZ by Jiya"
             className={`w-auto object-contain transition-all duration-400 ease-out group-hover:scale-105 ${
               isDarkHeader
-                ? 'h-16 sm:h-18 md:h-20 lg:h-24 drop-shadow-[0_4px_24px_rgba(201,168,106,0.7)] brightness-115 group-hover:brightness-135'
-                : 'h-13 sm:h-14 md:h-16 lg:h-17 drop-shadow-[0_2px_12px_rgba(84,20,26,0.25)] group-hover:drop-shadow-[0_4px_16px_rgba(84,20,26,0.4)]'
+                ? 'h-16 sm:h-18 md:h-20 lg:h-24 drop-shadow-[0_4px_20px_rgba(235,195,100,0.55)] brightness-110 group-hover:brightness-125'
+                : 'h-13 sm:h-15 md:h-16 lg:h-18 drop-shadow-[0_2px_10px_rgba(74,14,20,0.35)] drop-shadow-[0_0_12px_rgba(235,195,100,0.25)] group-hover:drop-shadow-[0_4px_16px_rgba(74,14,20,0.5)]'
             }`}
           />
         </Link>
