@@ -39,28 +39,32 @@ export default function Header() {
           : 'bg-gradient-to-b from-burgundy/85 via-burgundy/40 to-transparent text-ivory py-6'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-5 md:px-10 flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 relative flex items-center justify-between">
         {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className={`md:hidden p-2 transition-colors ${
+          className={`md:hidden p-2 transition-colors z-10 ${
             isScrolled ? 'text-ink hover:text-maroon' : 'text-ivory hover:text-gold'
           }`}
           aria-label="Toggle navigation menu"
         >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Brand Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
+        {/* Brand Logo - Prominently Centered on Mobile, Elegant on Desktop */}
+        <Link
+          to="/"
+          className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 z-10 flex items-center justify-center group transition-transform duration-300 hover:scale-[1.03]"
+          aria-label="Riwaaz - Home"
+        >
           <img
             src="/images/riwaaz-logo.png"
             alt="RIWAAZ by Jiya"
-            className={`transition-all duration-300 ${
+            className={`w-auto object-contain transition-all duration-300 ${
               isScrolled
-                ? 'h-9 md:h-10 brightness-90 group-hover:opacity-85'
-                : 'h-11 md:h-13 brightness-125 group-hover:brightness-150'
+                ? 'h-11 sm:h-12 md:h-12 lg:h-13 drop-shadow-[0_2px_8px_rgba(61,12,17,0.18)] brightness-95 group-hover:brightness-110'
+                : 'h-13 sm:h-14 md:h-15 lg:h-17 drop-shadow-[0_2px_16px_rgba(201,168,106,0.55)] brightness-110 group-hover:brightness-125'
             }`}
           />
         </Link>
